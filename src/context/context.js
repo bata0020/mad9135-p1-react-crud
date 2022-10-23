@@ -14,7 +14,7 @@ function DataProvider(props) {
   }, [cars]);
 
   //TODO: verify the value format of return statement below
-  return <DataContext.Provider value={[cars, dispatch]} {...props} />;
+  return <DataContext.Provider value={{ cars, dispatch }} {...props} />;
 }
 
 export { DataContext, DataProvider };

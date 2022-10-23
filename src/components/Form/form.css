@@ -1,0 +1,53 @@
+form {
+  background-color: #121212;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.35rem #121212;
+  color: #f2f2f2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 50em;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.35rem;
+  border: 0.025rem solid #dce0e5;
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+.buttons-add-cancel {
+  text-align: center;
+}
+
+.save-btn, .cancel-btn {
+  color: #fff;
+  padding: 0.55rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  width: 15%;
+  margin: 0 1.5rem;
+  cursor: pointer;
+}
+
+.save-btn{
+  background-color: #2A6328;
+  border: 0.025rem solid #2A6328;
+}
+
+.cancel-btn {
+  background-color: #4d5a63;
+  border: 0.025rem solid #4d5a63;
+}
