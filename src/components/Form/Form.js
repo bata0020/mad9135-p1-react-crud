@@ -81,7 +81,7 @@ function Form({ car }) {
           <input
             type="number"
             value={editCarInfo.year}
-            onChange={(ev) => handleOnChange("model", ev.target.value)}
+            onChange={(ev) => handleOnChange("year", ev.target.value)}
             required
           />
         </div>

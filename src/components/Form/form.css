@@ -61,6 +61,7 @@ input {
   padding: 0.45rem 0.9rem;
   margin: 1rem;
   border-radius: 0.25rem;
+  cursor: pointer;
 }
 
 .update-form {
