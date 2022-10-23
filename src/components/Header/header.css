@@ -1,0 +1,16 @@
+a {
+  text-decoration: none;
+  color: #f2f2f2
+}
+
+h1 {
+  font-size: 1.802rem;
+  padding: 1rem 1rem 0;
+  margin: 0;
+}
+
+@media only screen and (min-width: 45em) {
+  h1 {
+    font-size: 2.488rem;
+  }
+}
