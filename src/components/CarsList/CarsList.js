@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../context/context";
+import CarDetails from "../CarDetails/CarDetails";
 import "./carsList.css";
 
 function CarsList() {
@@ -15,7 +16,11 @@ function CarsList() {
         </Link>
       </div>
       <div className="list">
-        <ul>{cars.map((car) => ({ car }))}</ul>
+        <ul>
+          {cars.map((car) => (
+            <CarDetails key={car.id} car={car} />
+          ))}
+        </ul>
       </div>
     </>
   ) : (
