@@ -1,0 +1,52 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(30, 53, 76, 70%);
+  z-index: 1000;
+}
+
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e9eff2;
+  z-index: 1000;
+  border-radius: 0.5rem;
+  padding: 2rem 3rem;
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.44rem;
+}
+
+.dialog p{
+  font-size: 1.1rem;
+}
+
+.delete-yes-no {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.yes-btn,
+.no-btn {
+  border: 0.075rem solid darkgreen;
+  border-radius: 0.25rem;
+  background-color: darkgreen;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 4.5rem;
+}
+
+.no-btn {
+  border: 0.075rem solid darkred;
+  background-color: darkred;
+}

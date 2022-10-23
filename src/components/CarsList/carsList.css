@@ -7,7 +7,7 @@
   background-color: #121212;
   box-shadow: 0 0 0.35rem #121212;
   color: #f2f2f2;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .empty {
@@ -38,4 +38,15 @@
 .back-btn:hover {
   background-color: #7c70fa;
   color: #01060c;
+}
+
+ul {
+  list-style: none;
+  color: #fff;
+  margin: 2rem 0;
+  padding: 2rem;
+  border: 0.025rem solid #121212;
+  border-radius: 0.5rem;
+  background-color: #121212;
+  box-shadow: 0 0 0.35rem #121212;
 }
