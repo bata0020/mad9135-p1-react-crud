@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { DataContext } from "../../context/context";
 import "./form.css";
 
-function Form() {
+function Form({ car }) {
   const { dispatch } = useContext(DataContext);
 
   const [make, setMake] = useState("");
@@ -12,7 +12,34 @@ function Form() {
 
   const goTo = useNavigate();
 
-  function handleOnSubmit(ev) {
+  const [editCarInfo, setEditCarInfo] = useState({
+    id: null,
+    make: "",
+    model: "",
+    year: "",
+  });
+
+  useEffect(() => {
+    if (car) {
+      setEditCarInfo(car);
+    }
+  }, [car]);
+
+  function handleOnChange(key, newValue) {
+    setEditCarInfo({ ...editCarInfo, [key]: newValue });
+  }
+
+  function handleEditOnSubmit(ev) {
+    ev.preventDefault();
+    dispatch({
+      type: "EDIT_CAR",
+      car: editCarInfo,
+    });
+    setEditCarInfo({});
+    goTo("/");
+  }
+
+  function handleAddOnSubmit(ev) {
     ev.preventDefault();
     dispatch({
       type: "ADD_CAR",
@@ -28,7 +55,45 @@ function Form() {
     goTo("/");
   }
 
-  return (
+  return car ? (
+    <>
+      <form className="update-form" onSubmit={handleEditOnSubmit}>
+        <div className="add-car-make">
+          <label>Make</label>
+          <input
+            type="text"
+            value={editCarInfo.make}
+            onChange={(ev) => handleOnChange("make", ev.target.value)}
+            required
+          />
+        </div>
+        <div className="add-car-model">
+          <label>Model</label>
+          <input
+            type="text"
+            value={editCarInfo.model}
+            onChange={(ev) => handleOnChange("model", ev.target.value)}
+            required
+          />
+        </div>
+        <div className="add-car-year">
+          <label>Year</label>
+          <input
+            type="number"
+            value={editCarInfo.year}
+            onChange={(ev) => handleOnChange("model", ev.target.value)}
+            required
+          />
+        </div>
+        <div className="buttons-save-cancel">
+          <button className="save-edit">Save</button>
+          <Link to="/">
+            <button className="cancel-edit">Cancel</button>
+          </Link>
+        </div>
+      </form>
+    </>
+  ) : (
     <>
       <div className="title-bar">
         <h2>Add A Car</h2>
@@ -36,7 +101,7 @@ function Form() {
           <button className="back-btn">Back</button>
         </Link>
       </div>
-      <form onSubmit={handleOnSubmit}>
+      <form className="add-form" onSubmit={handleAddOnSubmit}>
         <div className="add-car-make">
           <label>Make</label>
           <input
@@ -65,7 +130,7 @@ function Form() {
           />
         </div>
         <div className="buttons-add-cancel">
-          <button className="save-btn">Add</button>
+          <button className="add-btn">Add</button>
           <Link to="/">
             <button className="cancel-btn">Cancel</button>
           </Link>

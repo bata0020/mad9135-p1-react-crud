@@ -1,4 +1,4 @@
-form {
+.add-form {
   background-color: #121212;
   padding: 2rem;
   border-radius: 0.5rem;
@@ -11,6 +11,10 @@ form {
   max-width: 50em;
   margin: auto;
   margin-top: 2rem;
+}
+
+h2 {
+  font-size: 1.602rem;
 }
 
 label {
@@ -28,11 +32,11 @@ input {
   width: 100%;
 }
 
-.buttons-add-cancel {
+.buttons-add-cancel, .buttons-save-cancel {
   text-align: center;
 }
 
-.save-btn, .cancel-btn {
+.add-btn, .cancel-btn {
   color: #fff;
   padding: 0.55rem 1rem;
   border-radius: 0.25rem;
@@ -42,12 +46,28 @@ input {
   cursor: pointer;
 }
 
-.save-btn{
+.add-btn, .save-edit{
   background-color: #2A6328;
   border: 0.025rem solid #2A6328;
 }
 
-.cancel-btn {
+.cancel-btn, .cancel-edit{
   background-color: #4d5a63;
   border: 0.025rem solid #4d5a63;
+}
+
+.save-edit, .cancel-edit {
+  color: #fff;
+  padding: 0.45rem 0.9rem;
+  margin: 1rem;
+  border-radius: 0.25rem;
+}
+
+.update-form {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 30em;
+  margin: auto;
+  padding-top: 1rem 
 }

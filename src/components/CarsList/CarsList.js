@@ -1,11 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../context/context";
 import CarDetails from "../CarDetails/CarDetails";
+import Form from "../Form/Form";
 import "./carsList.css";
 
 function CarsList() {
   const { cars } = useContext(DataContext);
+
+  const [editCarId, setEditCarId] = useState(null);
+
+  function carToEdit(data) {
+    setEditCarId(data.id);
+  }
 
   return cars.length ? (
     <>
@@ -18,7 +25,16 @@ function CarsList() {
       <div className="list">
         <ul>
           {cars.map((car) => (
-            <CarDetails key={car.id} car={car} />
+            // <Fragment key={car.id}>
+            //   <CarDetails key={car.id} car={car} carToEdit={carToEdit} />
+            // </Fragment>
+            <Fragment key={car.id}>
+              {editCarId === car.id ? (
+                <Form key={car.id} car={car} />
+              ) : (
+                <CarDetails key={car.id} car={car} carToEdit={carToEdit} />
+              )}
+            </Fragment>
           ))}
         </ul>
       </div>

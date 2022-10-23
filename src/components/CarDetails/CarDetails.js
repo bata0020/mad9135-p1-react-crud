@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import ConfirmDelete from "../ConfirmDelete/ConfirmDelete";
 import "./carDetails.css";
 
-function CarDetails({ car }) {
+function CarDetails({ car, carToEdit }) {
   const [deleteConfirm, setDeleteConfirm] = useState(false);
 
-  function handleOnDeleteClick(ev) {
+  function handleUpdateOnClick(ev) {
+    ev.preventDefault();
+    carToEdit(car);
+  }
+
+  function handleDeleteOnClick(ev) {
     ev.preventDefault();
     setDeleteConfirm(true);
   }
@@ -23,8 +28,10 @@ function CarDetails({ car }) {
           <div className="year">{car.year}</div>
         </div>
         <div className="update-delete-btn">
-          <button className="update-btn">Update</button>
-          <button className="delete-btn" onClick={handleOnDeleteClick}>
+          <button className="update-btn" onClick={handleUpdateOnClick}>
+            Update
+          </button>
+          <button className="delete-btn" onClick={handleDeleteOnClick}>
             Delete
           </button>
         </div>
