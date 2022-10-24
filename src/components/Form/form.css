@@ -59,7 +59,7 @@ input {
 .save-edit, .cancel-edit {
   color: #fff;
   padding: 0.45rem 0.9rem;
-  margin: 1rem;
+  margin: 1rem 1rem 0;
   border-radius: 0.25rem;
   cursor: pointer;
 }
@@ -70,5 +70,7 @@ input {
   width: 100%;
   max-width: 30em;
   margin: auto;
-  padding-top: 1rem 
+  padding: 1rem;
+  border: 1px solid #f1f1f1;
+  border-radius: 0.35rem;
 }

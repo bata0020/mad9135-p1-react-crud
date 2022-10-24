@@ -4,15 +4,10 @@ import reducer from "../reducer/reducer";
 const DataContext = createContext();
 
 function DataProvider(props) {
-  const [cars, dispatch] = useReducer(
-    reducer,
-    [],
-    () => {
-      const localStorageData = localStorage.getItem("carList");
-      return localStorageData ? JSON.parse(localStorageData) : [];
-    },
-    []
-  );
+  const [cars, dispatch] = useReducer(reducer, [], () => {
+    const localStorageData = localStorage.getItem("carList");
+    return localStorageData ? JSON.parse(localStorageData) : [];
+  });
 
   useEffect(() => {
     localStorage.setItem("carList", JSON.stringify(cars));

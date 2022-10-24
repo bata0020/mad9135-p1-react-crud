@@ -17,7 +17,7 @@ li {
 
 .update-btn, .delete-btn {
   color: #fff;
-  padding: 0.55rem 1rem;
+  padding: 0.55rem 0.75rem;
   border-radius: 0.25rem;
   margin: 0.5rem;
   cursor: pointer;
@@ -41,5 +41,6 @@ li {
   .update-btn,
   .delete-btn {
     margin: 1rem;
+    padding: 0.55rem 1rem;
   }
 }
